@@ -67,8 +67,8 @@ data "aws_iam_policy_document" "cloudfront_oac_access" {
     resources = ["${aws_s3_bucket.main.arn}/*"]
 
     condition {
-      test = "StringEquals"
-      values = [aws_cloudfront_distribution.main.arn]
+      test     = "StringEquals"
+      values   = [aws_cloudfront_distribution.main.arn]
       variable = "AWS:SourceArn"
     }
   }
